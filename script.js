@@ -9,28 +9,21 @@ let possibleCharacters = ''
 let userPassword = ''
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+// Password box reset
+function userPasswordReset() {
+  passwordLength = ''
+  possibleCharacters = ''
+  userPassword = ''
 }
-
-function generatePassword() {
-  for (let i = 0; i < passwordLength; i++) {
-    userPassword += possibleCharacters[Math.floor(Math.random() * possibleCharacters.length)]
-  }
-  return userPassword
-}
-
 
 // Password Length
 function promptLength() {
   passwordLength = parseInt(prompt('How long do you want your password? Min 8 Max 128'))
-  if (passwordLength < 8 || passwordLength > 128) {
-    alert('Please enter a number between 8 and 128')
-    return
-  }
+  // if (passwordLength < 8 || passwordLength > 128) {
+  //   alert('Please enter a number between 8 and 128')
+  //   return
+  // }
   console.log(passwordLength) // DELETE LATER: debug check
 }
 
@@ -66,17 +59,42 @@ function confirmSpecial() {
   console.log(possibleCharacters) // DELETE LATER: debug check
 }
 
+// Given write password function
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+// Password Generator
+function generatePassword() {
+  for (let i = 0; i < passwordLength; i++) {
+    userPassword += possibleCharacters[Math.floor(Math.random() * possibleCharacters.length)]
+  }
+  return userPassword
+}
+
+
 
 // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
-
-
 generateBtn.addEventListener("click", () => {
+  userPasswordReset()
   promptLength()
+  // Check for password length
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert('Please enter a number between 8 and 128')
+    return
+  }
   confirmLowerCase()
   confirmUpperCase()
   confirmNumeric()
   confirmSpecial()
+  // Check for password criteria
+  if (possibleCharacters.length === 0) {
+    alert('Please enter at least one criteria for the password')
+    return
+  }
   writePassword()
 })
 
