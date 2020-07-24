@@ -19,7 +19,11 @@ It is possible for the generated password to not have a selected criteria due to
 
 Kept pre-written code as best as possible.
 
-<img src="./preview1.jpg" width = "100">
+<img src="./img/preview1.jpg" width = "100">
+
+<img src="./img/preview2.jpg" width = "100">
+
+<img src="./img/preview3.jpg" width = "100">
 
 ### Requirements
 
