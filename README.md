@@ -1,8 +1,10 @@
 # js-passwordgenerator
 Homework03 - Makoto Asahi
 # Summary
+Kept pre-written code as best as possible.
+Double Quotes and Backslash were omitted from special characters.
 
-# 03 JavaScript: Password Generator
+# Requirements
 
 Create an application that generates a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
 
