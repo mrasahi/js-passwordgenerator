@@ -6,7 +6,7 @@ let numeric = '1234567890' // numeric[ 0 - 9]
 let special = "#$%&'()*+,-./:;<=>?@[]^!_`{|}~" // [ 0 - 29] double quote and backslash are excluded
 let passwordLength = '' // min 8 max 128
 let possibleCharacters = ''
-let passwordText =''
+let userPassword = ''
 
 // Write password to the #password input
 function writePassword() {
@@ -14,16 +14,13 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 function generatePassword() {
-  for (let i = 0; i < passwordLength; i++){
-    password += (possibleCharacters[Math.floor(Math.random() * possibleCharacters.length)])
-    console.log(password)
+  for (let i = 0; i < passwordLength; i++) {
+    userPassword += possibleCharacters[Math.floor(Math.random() * possibleCharacters.length)]
   }
-  return password
-  console.log(`full ${password}`)
+  return userPassword
 }
 
 
