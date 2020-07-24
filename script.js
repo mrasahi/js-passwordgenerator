@@ -4,9 +4,9 @@ let lowerCase = `abcdefghijklmnopqrstuvwxyz` // lowerCase[ 0 - 25 ]
 let upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' // upperCase[ 0 - 25 ]
 let numeric = '1234567890' // numeric[ 0 - 9]
 let special = "#$%&'()*+,-./:;<=>?@[]^!_`{|}~" // [ 0 - 29] double quote and backslash are excluded
-// min 8 max 128
+let passwordLength = '' // min 8 max 128
 let possibleCharacters = ''
-let PasswordText =''
+let passwordText =''
 
 // Write password to the #password input
 function writePassword() {
@@ -17,7 +17,14 @@ function writePassword() {
 
 }
 
-
+function generatePassword() {
+  for (let i = 0; i < passwordLength; i++){
+    password += (possibleCharacters[Math.floor(Math.random() * possibleCharacters.length)])
+    console.log(password)
+  }
+  return password
+  console.log(`full ${password}`)
+}
 
 
 // Password Length
@@ -35,7 +42,7 @@ function confirmLowerCase() {
   if (confirm('Will the password include lowercase characters?')) {
     possibleCharacters += lowerCase
   }
-  console.log(possibleCharacters)
+  console.log(possibleCharacters) // DELETE LATER: debug check
 }
 
 // Uppercase add
@@ -43,7 +50,7 @@ function confirmUpperCase() {
   if (confirm('Will the password include uppercase characters?')) {
     possibleCharacters += upperCase
   }
-  console.log(possibleCharacters)
+  console.log(possibleCharacters) // DELETE LATER: debug check
 }
 
 // Numbers add
@@ -51,18 +58,17 @@ function confirmNumeric() {
   if (confirm('Will the password include numbers?')) {
     possibleCharacters += numeric
   }
-  console.log(possibleCharacters)
+  console.log(possibleCharacters) // DELETE LATER: debug check
 }
 
 // Special Characters add
 function confirmSpecial() {
-
+  if (confirm('Will the password include special characters?')) {
+    possibleCharacters += special
+  }
+  console.log(possibleCharacters) // DELETE LATER: debug check
 }
 
-// 
-function confirmConfirm() {
-  confirm(`Your choices are`)
-}
 
 // Add event listener to generate button
 // generateBtn.addEventListener("click", writePassword);
@@ -73,8 +79,7 @@ generateBtn.addEventListener("click", () => {
   confirmLowerCase()
   confirmUpperCase()
   confirmNumeric()
-  // function 1
-  // function 4
-  // writePassword;
+  confirmSpecial()
+  writePassword()
 })
 

@@ -3,6 +3,8 @@ Homework03 - Makoto Asahi
 # Summary
 Kept pre-written code as best as possible.
 Double Quotes and Backslash were omitted from special characters.
+Available characters were made into strings
+> += used instead of concat method
 
 # Requirements
 
