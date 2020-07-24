@@ -60,20 +60,13 @@ function generatePassword() {
     userPassword += possibleCharacters[Math.floor(Math.random() * possibleCharacters.length)]
   }
 for (let i = guaranteedCriteria.length; i > 0; i--) {
-  console.log(userPassword)
   let position =  (Math.floor(Math.random() * userPassword.length))
   let addedthingy = guaranteedCriteria[Math.floor(Math.random() * guaranteedCriteria.length)]
   guaranteedCriteria = guaranteedCriteria.replace(addedthingy, '')
-  console.log(`addedthingy: ${addedthingy}`)
-  console.log(`position: ${position}`)
   userPassword = [userPassword.slice(0, position), addedthingy, userPassword.slice(position)].join('');
-  console.log(guaranteedCriteria)
-  console.log(userPassword)}
+}
   return userPassword
 }
-
-// Password Criteria Check
-
 
 // Write password to the #password input
 function writePassword() {
