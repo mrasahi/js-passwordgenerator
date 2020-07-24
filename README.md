@@ -4,8 +4,8 @@ Homework03 - Makoto Asahi
 Generates a random password between 8 and 128 characters.
 
 User can select 4 criteria for their password:
->uppercase, lowercase, numbers, and special characters
-> Double Quotes and Backslash were omitted from special characters.
+- uppercase, lowercase, numbers, and special characters
+- Double Quotes and Backslash were omitted from special characters.
 
 Restarts if the password length is not between 8 and 128.
 
@@ -19,11 +19,11 @@ It is possible for the generated password to not have a selected criteria due to
 
 Kept pre-written code as best as possible.
 
-<img src="./img/preview1.jpg" width = "100">
+<img src="./img/preview1.jpg" width = "100%">
 
-<img src="./img/preview2.jpg" width = "100">
+<img src="./img/preview2.jpg" width = "100%">
 
-<img src="./img/preview3.jpg" width = "100">
+<img src="./img/preview3.jpg" width = "100%">
 
 ### Requirements
 
