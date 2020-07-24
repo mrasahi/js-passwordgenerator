@@ -1,12 +1,11 @@
 # js-passwordgenerator
 Homework03 - Makoto Asahi
-# Summary
-Kept pre-written code as best as possible.
+## Summary
+Generates a random password between 8 and 128 characters.
 
-Double Quotes and Backslash were omitted from special characters.
-
-Available characters were made into strings.
-> += used instead of concat method.
+User can select 4 criteria for their password:
+>uppercase, lowercase, numbers, and special characters
+> Double Quotes and Backslash were omitted from special characters.
 
 Restarts if the password length is not between 8 and 128.
 
@@ -18,10 +17,11 @@ New password will replace text if the button is clicked again.
 
 It is possible for the generated password to not have a selected criteria due to pure randomness.
 
+Kept pre-written code as best as possible.
 
+<img src="./preview1.jpg" width = "100">
 
-
-# Requirements
+### Requirements
 
 Create an application that generates a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
 
