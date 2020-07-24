@@ -12,7 +12,11 @@ Restarts if the password length is not between 8 and 128.
 
 Restarts if password length is not a number.
 
-Canceling every criteria will alert the user and restart.
+Restarts if no password criteria is selected.
+
+New password will replace text if the button is clicked again.
+
+It is possible for the generated password to not have a selected criteria due to pure randomness.
 
 
 
