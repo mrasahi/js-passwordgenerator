@@ -7,6 +7,7 @@ let special = "#$%&'()*+,-./:;<=>?@[]^!_`{|}~" // [ 0 - 29] double quote and bac
 let passwordLength = '' // min 8 max 128
 let possibleCharacters = ''
 let userPassword = ''
+let guaranteedCriteria = ''
 
 
 // Password box reset
@@ -25,6 +26,7 @@ function promptLength() {
 function confirmLowerCase() {
   if (confirm('Will the password include lowercase characters?')) {
     possibleCharacters += lowerCase
+    guaranteedCriteria += lowerCase[Math.floor(Math.random() * lowerCase.length)]
   }
 }
 
@@ -32,6 +34,7 @@ function confirmLowerCase() {
 function confirmUpperCase() {
   if (confirm('Will the password include uppercase characters?')) {
     possibleCharacters += upperCase
+    guaranteedCriteria += upperCase[Math.floor(Math.random() * upperCase.length)]
   }
 }
 
@@ -39,6 +42,7 @@ function confirmUpperCase() {
 function confirmNumeric() {
   if (confirm('Will the password include numbers?')) {
     possibleCharacters += numeric
+    guaranteedCriteria += numeric[Math.floor(Math.random() * numeric.length)]
   }
 }
 
@@ -46,16 +50,30 @@ function confirmNumeric() {
 function confirmSpecial() {
   if (confirm('Will the password include special characters?')) {
     possibleCharacters += special
+    guaranteedCriteria += special[Math.floor(Math.random() * special.length)]
   }
 }
 
 // Password Generator
 function generatePassword() {
-  for (let i = 0; i < passwordLength; i++) {
+  for (let i = 0; i < passwordLength - guaranteedCriteria.length; i++) {
     userPassword += possibleCharacters[Math.floor(Math.random() * possibleCharacters.length)]
   }
+for (let i = guaranteedCriteria.length; i > 0; i--) {
+  console.log(userPassword)
+  let position =  (Math.floor(Math.random() * userPassword.length))
+  let addedthingy = guaranteedCriteria[Math.floor(Math.random() * guaranteedCriteria.length)]
+  guaranteedCriteria = guaranteedCriteria.replace(addedthingy, '')
+  console.log(`addedthingy: ${addedthingy}`)
+  console.log(`position: ${position}`)
+  userPassword = [userPassword.slice(0, position), addedthingy, userPassword.slice(position)].join('');
+  console.log(guaranteedCriteria)
+  console.log(userPassword)}
   return userPassword
 }
+
+// Password Criteria Check
+
 
 // Write password to the #password input
 function writePassword() {

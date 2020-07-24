@@ -15,9 +15,14 @@ Restarts if no password criteria is selected.
 
 New password will replace text if the button is clicked again.
 
-It is possible for the generated password to not have a selected criteria due to pure randomness.
-
 Kept pre-written code as best as possible.
+
+~~It is possible for the generated password to not have a selected criteria due to pure randomness.~~
+
+If a criteria is selected, at least one item from the selected criteria is guaranteed to be added to the generated password
+> The guaranteed criteria is selected at random, then pushed in at a random index of the generated password
+
+**Using strings was a mistake**
 
 <img src="./img/preview1.jpg" width = "100%">
 
