@@ -5,10 +5,16 @@ Kept pre-written code as best as possible.
 
 Double Quotes and Backslash were omitted from special characters.
 
-Available characters were made into strings
-> += used instead of concat method
+Available characters were made into strings.
+> += used instead of concat method.
 
-Canceling every password criteria will alert the user and restart.
+Restarts if the password length is not between 8 and 128.
+
+Restarts if password length is not a number.
+
+Canceling every criteria will alert the user and restart.
+
+
 
 
 # Requirements

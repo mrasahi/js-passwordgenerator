@@ -19,12 +19,12 @@ function userPasswordReset() {
 
 // Password Length
 function promptLength() {
-  passwordLength = parseInt(prompt('How long do you want your password? Min 8 Max 128'))
+  passwordLength = parseInt(prompt('How long do you want your password? Min: 8 Max: 128'))
   // if (passwordLength < 8 || passwordLength > 128) {
   //   alert('Please enter a number between 8 and 128')
   //   return
   // }
-  console.log(passwordLength) // DELETE LATER: debug check
+  console.log(isNaN(passwordLength)) // DELETE LATER: debug check
 }
 
 // Lowercase add
@@ -82,8 +82,9 @@ generateBtn.addEventListener("click", () => {
   userPasswordReset()
   promptLength()
   // Check for password length
-  if (passwordLength < 8 || passwordLength > 128) {
-    alert('Please enter a number between 8 and 128')
+  if ((passwordLength < 8 || passwordLength > 128) ||
+      (isNaN(passwordLength))) {
+    alert('Please input a number between 8 and 128')
     return
   }
   confirmLowerCase()
